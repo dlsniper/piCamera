@@ -11,11 +11,10 @@ package piCamera
 
 import (
 	"context"
-	"io"
-	"os/exec"
-
 	"errors"
+	"io"
 	"os"
+	"os/exec"
 	"sync"
 )
 
@@ -64,6 +63,7 @@ func New(parentCtx context.Context, args *RaspividArgs) (*PiCamera, error) {
 		command:  cmd,
 		stdOut:   stdOut,
 		rwMutext: new(sync.RWMutex),
+		args:     args,
 	}, nil
 }
 
